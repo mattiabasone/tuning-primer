@@ -1,39 +1,39 @@
 #!/bin/sh
 
-# set tabstop=4
+# set tabstop=8
 #########################################################################
 #                                                                       #
-#	MySQL performance tuning primer script								#
-#	Writen by: Matthew Montgomery										#
-#	Report bugs to: https://bugs.launchpad.net/mysql-tuning-primer		#
-#	Inspired by: MySQLARd (http://gert.sos.be/demo/mysqlar/)			#
-#	Version: 1.6-r1		Released: 2011-08-06							#
-#	Licenced under GPLv2												#
-#																		#
-#	- Added support for MariaDB 10.x									#
-#																		#
+#	MySQL performance tuning primer script				#
+#	Writen by: Matthew Montgomery					#
+#	Report bugs to: https://bugs.launchpad.net/mysql-tuning-primer	#
+#	Inspired by: MySQLARd (http://gert.sos.be/demo/mysqlar/)	#
+#	Version: 1.6-r1		Released: 2011-08-06			#
+#	Licenced under GPLv2						#
+#									#
+#	- Added support for MariaDB 10.x				#
+#									#
 #########################################################################
-#																		#
-#	Usage: ./tuning-primer.sh [ mode ]									#
-#																		#
-#	Available Modes:													#
-#		all : 		perform all checks (default)						#
-#		prompt : 	prompt for login credintials and sockets			#
-#				and execution Modes										#
-# 		mem, memory : 	run checks for tunable options which			#
-#				effect memory usage										#
-#		disk, file :	run checks for options which effect				#
-#				i/o performance or file handle limits					#
-#		innodb :	run InnoDB checks /* to be improved */				#
-#		misc : 		run checks for that don't categorise				#
-#				well Slow Queries, Binary logs,							#
-#				Used Connections and Worker Threads						#
+#									#
+#	Usage: ./tuning-primer.sh [ mode ]				#
+#									#
+#	Available Modes:						#
+#		all : 		perform all checks (default)		#
+#		prompt : 	prompt for login credintials and sockets#
+#				and execution Modes			#
+# 		mem, memory : 	run checks for tunable options which	#
+#				effect memory usage			#
+#		disk, file :	run checks for options which effect	#
+#				i/o performance or file handle limits	#
+#		innodb :	run InnoDB checks /* to be improved */	#
+#		misc : 		run checks for that don't categorise	#
+#				well Slow Queries, Binary logs,		#
+#				Used Connections and Worker Threads	#
 #########################################################################
-#																		#
+#									#
 # Set this socket variable ONLY if you have multiple instances running	#
-# or we are unable to find your socket, and you don't want to to be		#
-# prompted for input each time you run this script.						#
-#																		#
+# or we are unable to find your socket, and you don't want to to be	#
+# prompted for input each time you run this script.			#
+#									#
 #########################################################################
 socket=
 
