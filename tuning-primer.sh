@@ -398,7 +398,7 @@ mysql_status () {
 #########################################################################
 
 mysql_variable () {
-	local variable=$($mysql -Bse "show /*!50000 global */ variables like $1" | awk '{ print $2 }')
+	local variable=$($mysql -Bse "show /*!50000 global */ variables like $1" | awk 'NR==1{ print $2 }')
 	export "$2"=$variable
 }
 mysql_variableTSV () {
@@ -940,7 +940,7 @@ check_join_operations () {
 
 	mysql_status \'Select_full_join\' select_full_join
 	mysql_status \'Select_range_check\' select_range_check
-	mysql_variable \'join_buffer_size%\' join_buffer_size
+	mysql_variable \'join_buffer%\' join_buffer_size
 
 	## Some 4K is dropped from join_buffer_size adding it back to make sane ##
 	## handling of human-readable conversion ##
