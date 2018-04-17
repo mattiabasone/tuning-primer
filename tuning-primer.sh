@@ -1277,7 +1277,7 @@ check_innodb_status () {
                 else
                 innodb_enabled=1
                 fi
-	elif [[ $major_version = 10* ]] ; then
+	elif echo "$major_version" | grep -qe '10.*' ; then
 	mysql_variable \'ignore_builtin_innodb\' ignore_builtin_innodb
 		if [ "$ignore_builtin_innodb" = "ON" ] ; then
                 innodb_enabled=0
